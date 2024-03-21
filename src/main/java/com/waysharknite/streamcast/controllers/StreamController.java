@@ -31,6 +31,7 @@ public class StreamController {
         );
     }
 
+    @CrossOrigin(origins = "http://94.131.14.228:5173")
     @GetMapping()
     public List<MessageDto> getAll(
         @RequestParam final String room
@@ -45,6 +46,7 @@ public class StreamController {
             .toList();
     }
 
+    @CrossOrigin(origins = "http://94.131.14.228:5173")
     @PostMapping("/{id}/like")
     public MessageDto likeMessages(@PathVariable("id") String messageId) {
         var dbMessage = this.repository.findFirstById(UUID.fromString(messageId));
